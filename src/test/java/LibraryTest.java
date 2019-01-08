@@ -78,6 +78,5 @@ public class LibraryTest {
         assertEquals(5, library.getStockCount());
         library.lendBookById(book2);
         assertEquals(4, library.getStockCount());
-
     }
 }
