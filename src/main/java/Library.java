@@ -5,8 +5,9 @@ public class Library {
     private Integer capacity;
     private ArrayList<Book> stock;
 
-    public Library(String libraryName){
+    public Library(String libraryName, Integer libraryBookCapacity){
         this.name = libraryName;
+        this.capacity = libraryBookCapacity;
         this.stock = new ArrayList<>();
     }
 
@@ -19,6 +20,15 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        this.stock.add(book);
+        if (getStockCount() == getMaxCapacity()){
+            return;
+        }
+        else {
+            this.stock.add(book);
+        }
+    }
+
+    public int getMaxCapacity() {
+        return this.capacity;
     }
 }
