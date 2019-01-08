@@ -31,4 +31,13 @@ public class Library {
     public int getMaxCapacity() {
         return this.capacity;
     }
+
+    public Book lendBook() {
+        return this.stock.remove(0);
+    }
+
+    public Book lendBookById(Book bookNumber) {
+        int indexOfBook = this.stock.indexOf(bookNumber);
+        return this.stock.remove(indexOfBook);
+    }
 }

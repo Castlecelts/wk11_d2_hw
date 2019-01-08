@@ -55,4 +55,29 @@ public class LibraryTest {
         library.addBook(book6);
         assertEquals(5, library.getStockCount());
     }
+
+    @Test
+    public void canLendABook(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.addBook(book5);
+        assertEquals(5, library.getStockCount());
+        library.lendBook();
+        assertEquals(4, library.getStockCount());
+    }
+
+    @Test
+    public void canLendABookById(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.addBook(book5);
+        assertEquals(5, library.getStockCount());
+        library.lendBookById(book2);
+        assertEquals(4, library.getStockCount());
+
+    }
 }
